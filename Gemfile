@@ -34,7 +34,25 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# ユーザー認証
+gem 'devise'
+
+# Bootstrap（UI用）
+gem 'bootstrap', '~> 5.2.0'
+gem 'jquery-rails'
+
+# 開発環境とテスト環境のみで使用するGem
 group :development, :test do
+
+  # テスト用
+  gem 'rspec-rails', '~> 5.1.2'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  
+  # デバッグ用
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
@@ -45,11 +63,16 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+# 開発環境のみで使用するGem
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
   gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
+
+  gem 'letter_opener_web'  # メール送信をブラウザで確認
+  gem 'annotate'           # モデルにスキーマ情報をコメントで追加
+  gem 'bullet'             # N+1問題の検出
 end
 
