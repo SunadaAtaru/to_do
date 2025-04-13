@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h1 class="card-title mb-4">タスク管理アプリへようこそ</h1>
+          <p class="card-text mb-4">日々のやることを整理して、効率よく行動しよう！</p>
+
+          <% if user_signed_in? %>
+            <p class="mb-3">こんにちは、<strong><%= current_user.username %></strong> さん！</p>
+          <div class="d-flex justify-content-center gap-2">
+            <%= link_to 'マイページへ', user_path(current_user), class: "btn btn-primary" %>
+            <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: "ログアウトしますか？" } } %>
+          </div>
+          <% else %>
+            <%= link_to 'ログイン', new_user_session_path, class: "btn btn-primary me-2" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h5>このアプリでできること</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">✅ タスクの登録・更新・削除</li>
+          <li class="list-group-item">📅 締切日の管理</li>
+          <li class="list-group-item">🔍 タスクの一覧表示</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

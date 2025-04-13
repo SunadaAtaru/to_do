@@ -45,9 +45,13 @@ gem 'jquery-rails'
 group :development, :test do
 
   # テスト用
-  gem 'rspec-rails', '~> 5.1.2'
+  gem 'rspec-rails', '~> 6.1.0'  # 最新バージョンを指定
   gem 'factory_bot_rails'
   gem 'faker'
+
+  gem 'capybara'            # System Spec用ブラウザ操作
+  gem 'selenium-webdriver'  # Chrome操作（System Spec用）
+  gem 'webdrivers'          # ChromeDriverを自動で管理
   
   # デバッグ用
   gem 'pry-rails'
@@ -63,6 +67,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+
 # 開発環境のみで使用するGem
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -74,5 +79,11 @@ group :development do
   gem 'letter_opener_web'  # メール送信をブラウザで確認
   gem 'annotate'           # モデルにスキーマ情報をコメントで追加
   gem 'bullet'             # N+1問題の検出
+  
 end
+
+group :test do
+  gem 'database_cleaner-active_record' # テストDBの初期化
+end
+
 
