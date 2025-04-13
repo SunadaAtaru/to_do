@@ -51,7 +51,12 @@ class TasksController < ApplicationController
   # タスクの取得と認可
   def set_task
     @task = current_user.tasks.find_by(id: params[:id])
-    redirect_to tasks_path, alert: '権限がありません' unless @task
+    
+    unless @task
+      flash[:alert] = "アクセスが拒否されました。そのタスクは存在しないか、アクセス権限がありません。"
+      redirect_to tasks_path
+      return
+    end
   end
   
   # Strong Parameters

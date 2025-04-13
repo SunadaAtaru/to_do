@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "Tasks", type: :request do
   let(:user) { User.create!(email: "user@example.com", password: "password") }
-  
+  let(:other_user) { User.create!(email: "other@example.com", password: "password") }
+
   before do
-    sign_in user  # Deviseのヘルパーメソッド
+    sign_in user  # Deviseのサインインヘルパー
   end
-  
+
   describe "GET /tasks" do
     it "一覧ページが表示されること" do
       get tasks_path
@@ -66,6 +67,44 @@ RSpec.describe "Tasks", type: :request do
         delete task_path(task)
       }.to change(Task, :count).by(-1)
       
+      expect(response).to redirect_to(tasks_path)
+    end
+  end
+
+  # 認可のテスト
+  describe "認可" do
+    it "他のユーザーのタスク詳細ページにアクセスするとリダイレクトされる" do
+      other_task = Task.create!(title: "他のユーザーのタスク", user: other_user)
+      get task_path(other_task)
+
+      expect(response).to redirect_to(tasks_path)
+      follow_redirect!
+      expect(response.body).to include("アクセスが拒否されました")
+    end
+
+    it "他のユーザーのタスク編集ページにアクセスするとリダイレクトされる" do
+      other_task = Task.create!(title: "他のユーザーのタスク", user: other_user)
+      get edit_task_path(other_task)
+
+      expect(response).to redirect_to(tasks_path)
+    end
+
+    it "他のユーザーのタスクを更新しようとするとリダイレクトされる" do
+      other_task = Task.create!(title: "他のユーザーのタスク", user: other_user)
+      patch task_path(other_task), params: { task: { title: "更新しようとしたタイトル" } }
+
+      expect(response).to redirect_to(tasks_path)
+      other_task.reload
+      expect(other_task.title).to eq("他のユーザーのタスク")
+    end
+
+    it "他のユーザーのタスクを削除しようとするとリダイレクトされる" do
+      other_task = Task.create!(title: "他のユーザーのタスク", user: other_user)
+
+      expect {
+        delete task_path(other_task)
+      }.not_to change(Task, :count)
+
       expect(response).to redirect_to(tasks_path)
     end
   end
