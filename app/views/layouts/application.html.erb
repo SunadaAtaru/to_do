@@ -20,10 +20,15 @@
   </head>
 
   <body>
-  <% flash.each do |key, message| %>
-    <% bs_class = key == 'notice' ? 'success' : 'danger' %>
-    <div class="alert alert-<%= bs_class %> alert-dismissible fade show mt-2" role="alert">
-      <%= message %>
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= alert %>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   <% end %>

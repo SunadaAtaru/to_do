@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
  
   get "home/index"
   devise_for :users, controllers: {
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   # resources :users, only: [:show], constraints: { id: /\d+/ }
+  resources :tasks
   
   # 以下は既存のルート - 残しておくことをお勧めします
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
