@@ -108,4 +108,37 @@ RSpec.describe "Tasks", type: :request do
       expect(response).to redirect_to(tasks_path)
     end
   end
+
+  # toggle_statusアクションのテスト
+describe "PATCH /tasks/:id/toggle_status" do
+  it "タスクの状態を未完了から完了に切り替えられる" do
+    task = Task.create!(title: "テストタスク", status: "未完了", user: user)
+    
+    patch toggle_status_task_path(task)
+    
+    expect(response).to redirect_to(tasks_path)
+    task.reload
+    expect(task.status).to eq("完了")
+  end
+  
+  it "タスクの状態を完了から未完了に切り替えられる" do
+    task = Task.create!(title: "テストタスク", status: "完了", user: user)
+    
+    patch toggle_status_task_path(task)
+    
+    expect(response).to redirect_to(tasks_path)
+    task.reload
+    expect(task.status).to eq("未完了")
+  end
+  
+  it "他のユーザーのタスクの状態は変更できない" do
+    other_task = Task.create!(title: "他のユーザーのタスク", status: "未完了", user: other_user)
+    
+    patch toggle_status_task_path(other_task)
+    
+    expect(response).to redirect_to(tasks_path)
+    other_task.reload
+    expect(other_task.status).to eq("未完了") # 変更されていないことを確認
+  end
+ end
 end

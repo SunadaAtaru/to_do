@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy,:toggle_status]
   
   # GET /tasks
   def index
@@ -39,6 +39,17 @@ class TasksController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def toggle_status
+    if @task.status == '完了'
+      @task.update(status: '未完了')
+    else
+      @task.update(status: '完了')
+    end
+    
+    redirect_to tasks_path, notice: 'タスクの状態を更新しました'
+  end
+  
   
   # DELETE /tasks/:id
   def destroy
