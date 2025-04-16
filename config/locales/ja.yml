@@ -1,0 +1,32 @@
+ja:
+  hello: "こんにちは"
+
+  devise:
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    passwords:
+      send_instructions: "パスワード再設定の手順を記載したメールを送信しました。"
+      updated: "パスワードを変更しました。"
+    failure:
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      unauthenticated: "続行するにはログインまたはアカウント登録が必要です。"
+
+  errors:
+    messages:
+      not_saved:
+        one: "1 件のエラーが発生したため %{resource} は保存されませんでした。"
+        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+  
+  activerecord:
+    models:
+      user: "ユーザー"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "メールアドレスが見つかりません"

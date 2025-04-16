@@ -48,7 +48,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'  # 最新バージョンを指定
   gem 'factory_bot_rails'
   gem 'faker'
-
+  gem 'sassc-rails'
   gem 'capybara'            # System Spec用ブラウザ操作
   gem 'selenium-webdriver'  # Chrome操作（System Spec用）
   gem 'webdrivers'          # ChromeDriverを自動で管理
@@ -87,3 +87,5 @@ group :test do
 end
 
 
+
+gem "jsbundling-rails", "~> 1.3"

@@ -16,6 +16,11 @@
       </div>
 
       <%= f.submit "ログイン", class: "btn btn-primary w-100" %>
+
+      <!-- app/views/devise/sessions/new.html.erb (ログインフォーム) -->
+      <div class="form-group mt-3 text-center">
+        <%= link_to "パスワードをお忘れですか？", new_user_password_path, class: "text-decoration-none" %>
+      </div>
     <% end %>
   </div>
 </div>

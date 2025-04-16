@@ -1,0 +1,24 @@
+
+.navbar.navbar-expand-lg {
+
+    // 
+    background-color:#eb6ea5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+  }
+  
+  .dropdown-menu {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .dropdown-item:active {
+    background-color: #007bff;
+  }
