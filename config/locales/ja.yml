@@ -24,9 +24,27 @@ ja:
   activerecord:
     models:
       user: "ユーザー"
+      task: "タスク"
+    attributes:
+      task:
+        title: "タイトル"
+        status: "ステータス"
+        user: "ユーザー"
     errors:
       models:
         user:
           attributes:
             email:
               not_found: "メールアドレスが見つかりません"
+        task:
+          attributes:
+            title:
+              blank: "を入力してください"
+            status:
+              inclusion: "は一覧にありません"
+            user:
+              required: "を指定してください"
+      messages:
+        blank: "を入力してください"
+        inclusion: "は一覧にありません"
+        record_invalid: "バリデーションに失敗しました: %{errors}"

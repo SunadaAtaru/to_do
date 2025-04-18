@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Task, type: :model do
   # テスト全体で再利用するユーザー
-  let(:user) { User.create(email: "test@example.com", password: "password") }
+  let(:user) { create(:user) }
   
   describe "バリデーション" do
     it "タイトル、ステータス、ユーザーがあれば有効" do
@@ -17,8 +17,10 @@ RSpec.describe Task, type: :model do
     it "タイトルがなければ無効" do
       task = Task.new(title: nil, status: "未完了", user: user)
       task.valid?
-      expect(task.errors[:title]).to include("can't be blank")
+      # expect(task.errors).to have_key(:title)
+      expect(task.errors[:title]).to include("を入力してください")
     end
+    
 
     it "ステータスに不正な値を設定すると無効" do
       task = Task.new(title: "テストタスク", status: "不正な値", user: user)
@@ -29,13 +31,15 @@ RSpec.describe Task, type: :model do
     it "不正なステータスでは無効" do
       task = Task.new(title: "テストタスク", status: "保留中", user: user)
       task.valid?
-      expect(task.errors[:status]).to include("is not included in the list")
+      # expect(task.errors).to have_key(:status)
+      expect(task.errors[:status]).to include("は一覧にありません")
     end
+    
     
     it "ユーザーがなければ無効" do
       task = Task.new(title: "テストタスク", status: "未完了", user: nil)
       task.valid?
-      expect(task.errors[:user]).to include("must exist")
+      expect(task.errors[:user]).to include("を指定してください")
     end
   end
 
