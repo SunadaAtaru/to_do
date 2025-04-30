@@ -40,7 +40,7 @@ gem "bootsnap", require: false
 gem 'devise'
 
 # Bootstrap（UI用）
-gem 'bootstrap', '~> 5.2.0'
+gem 'bootstrap', '~> 5.3.5'
 gem 'jquery-rails'
 
 # 開発環境とテスト環境のみで使用するGem
