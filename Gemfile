@@ -47,7 +47,7 @@ gem 'jquery-rails'
 group :development, :test do
 
   # テスト用
-  gem 'rspec-rails', '~> 6.1.0'  # 最新バージョンを指定
+  gem 'rspec-rails', '~> 7.1.1'  # 最新バージョンを指定
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'sassc-rails'
