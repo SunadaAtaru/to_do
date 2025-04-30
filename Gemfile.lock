@@ -100,7 +100,7 @@ GEM
     brakeman (7.0.2)
       racc
     builder (3.3.0)
-    bullet (8.0.3)
+    bullet (8.0.5)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     capybara (3.40.0)
@@ -116,7 +116,7 @@ GEM
       logger (~> 1.5)
     coderay (1.1.3)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.0)
+    connection_pool (2.5.3)
     crass (1.0.6)
     database_cleaner-active_record (2.2.0)
       activerecord (>= 5.a)
@@ -442,10 +442,11 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  jquery-rails
   jsbundling-rails (~> 1.3)
   letter_opener_web
-  pry-rails
   mysql2
+  pry-rails
   puma (>= 5.0)
   rails (~> 7.2.2, >= 7.2.2.1)
   rspec-rails (~> 6.1.0)
@@ -453,8 +454,12 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   sprockets-rails
+  sqlite3 (>= 1.4)
   stimulus-rails
   turbo-rails
+  tzinfo-data
+  web-console
+  webdrivers
 
 
 BUNDLED WITH
