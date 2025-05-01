@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "rack", "2.2.13"  # rackのバージョンを指定
+
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 gem "sprockets-rails"
 gem "puma", ">= 5.0"
@@ -34,7 +36,8 @@ end
 # 開発環境のみで使用するGem
 group :development do
   gem "web-console"
-  # gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
+  gem "error_highlight", ">= 0.7.0", platforms: [:ruby]
+
   gem 'letter_opener_web'
   gem 'annotate'
   gem 'bullet'
