@@ -36,7 +36,7 @@ end
 # 開発環境のみで使用するGem
 group :development do
   gem "web-console"
-  gem "error_highlight", ">= 0.7.0", platforms: [:ruby]
+  # gem "error_highlight", ">= 0.7.0", platforms: [:ruby]
 
   gem 'letter_opener_web'
   gem 'annotate'
