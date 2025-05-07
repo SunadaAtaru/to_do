@@ -5,6 +5,7 @@ gem "rack", "2.2.13"  # rackのバージョンを指定
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 gem "sprockets-rails"
 gem "puma", ">= 5.0"
+gem 'mysql2'
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
