@@ -1,93 +1,55 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rack", "2.2.13"  # rackのバージョンを指定
+
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 1.4"
-# Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-gem 'mysql2'
-
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
-
-# Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
-# ユーザー認証
 gem 'devise'
-
-# Bootstrap（UI用）
 gem 'bootstrap', '~> 5.2.0'
-gem 'jquery-rails'
+gem 'dotenv-rails', groups: [:development, :test, :production]
+
 
 # 開発環境とテスト環境のみで使用するGem
 group :development, :test do
-
-  # テスト用
-  gem 'rspec-rails', '~> 6.1.0'  # 最新バージョンを指定
+  gem 'sqlite3', '~> 1.4' # 開発とテスト用SQLite
+  gem 'rspec-rails', '~> 6.1.0'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'sassc-rails'
-  gem 'capybara'            # System Spec用ブラウザ操作
-  gem 'selenium-webdriver'  # Chrome操作（System Spec用）
-  gem 'webdrivers'          # ChromeDriverを自動で管理
-  
-  # デバッグ用
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-
-  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
 
-
 # 開発環境のみで使用するGem
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # gem "error_highlight", ">= 0.7.0", platforms: [:ruby]
 
-  # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
-  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
-
-  gem 'letter_opener_web'  # メール送信をブラウザで確認
-  gem 'annotate'           # モデルにスキーマ情報をコメントで追加
-  gem 'bullet'             # N+1問題の検出
-  
+  gem 'letter_opener_web'
+  gem 'annotate'
+  gem 'bullet'
 end
 
 group :test do
-  gem 'database_cleaner-active_record' # テストDBの初期化
+  gem 'database_cleaner-active_record'
 end
 
-
+# 本番環境
+group :production do
+  gem 'mysql2', '>= 0.5.3' # 本番用MySQL
+end
 
 gem "jsbundling-rails", "~> 1.3"
