@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rack", "2.2.13"  # rackのバージョンを指定
+gem "rack", "3.1.14"  # rackのバージョンを指定
 
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 gem "sprockets-rails"
