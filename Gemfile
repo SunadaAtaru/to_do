@@ -31,6 +31,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
+  # → 5.4.0 以上ならOK
   gem "rubocop-rails-omakase", require: false
 end
 
