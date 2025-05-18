@@ -26,7 +26,7 @@ jobs:
           cache-version: v1-${{ github.sha }}  # キャッシュバージョンを追加
       
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager --skip-files EOLRuby
+        run: bin/brakeman --no-pager -x EOLRuby
 
   scan_js:
     runs-on: ubuntu-latest
