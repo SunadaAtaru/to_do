@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  
- 
   get "home/index"
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    sessions: "users/sessions",
+    registrations: "users/registrations"
   }
-  
+
   # ルートパスを設定
   root "home#index"
 
-  resources :users, only: [:show]
+  resources :users, only: [ :show ]
   # resources :users, only: [:show], constraints: { id: /\d+/ }
   resources :tasks do
     member do
