@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
       create_list(:task, 3, user: user)
       expect(user.tasks.count).to eq(3)
     end
-  
+
     it 'ユーザーが削除されると関連するタスクも削除される' do
       user = create(:user)
       create(:task, user: user)

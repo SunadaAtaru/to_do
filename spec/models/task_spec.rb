@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   # テスト全体で再利用するユーザー
   let(:user) { create(:user) }
-  
+
   describe "バリデーション" do
     it "タイトル、ステータス、ユーザーがあれば有効" do
       task = Task.new(
@@ -20,7 +20,7 @@ RSpec.describe Task, type: :model do
       # expect(task.errors).to have_key(:title)
       expect(task.errors[:title]).to include("を入力してください")
     end
-    
+
 
     it "ステータスに不正な値を設定すると無効" do
       task = Task.new(title: "テストタスク", status: "不正な値", user: user)
@@ -34,8 +34,8 @@ RSpec.describe Task, type: :model do
       # expect(task.errors).to have_key(:status)
       expect(task.errors[:status]).to include("は一覧にありません")
     end
-    
-    
+
+
     it "ユーザーがなければ無効" do
       task = Task.new(title: "テストタスク", status: "未完了", user: nil)
       task.valid?
@@ -49,7 +49,7 @@ RSpec.describe Task, type: :model do
       expect(task.status).to eq("未完了")
     end
   end
-  
+
   describe "関連付け" do
     it "ユーザーに属している" do
       task = Task.reflect_on_association(:user)

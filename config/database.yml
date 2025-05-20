@@ -23,5 +23,6 @@ production:
   password: <%= ENV['MYSQL_PASSWORD'] %>
   encoding: utf8mb4
   pool: 5
+
   timeout: 5000
 
