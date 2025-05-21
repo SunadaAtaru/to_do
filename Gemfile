@@ -16,7 +16,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "devise"
-gem "bootstrap", "~> 5.2.0"
+gem "bootstrap", "~> 5.3.5"
 gem "sassc-rails"  # Bootstrap 5.3.xのSassエンジン依存関係
 gem "dotenv-rails", groups: [ :development, :test, :production ]
 
