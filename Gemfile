@@ -23,7 +23,7 @@ gem "dotenv-rails", groups: [ :development, :test, :production ]
 
 # 開発環境とテスト環境のみで使用するGem
 group :development, :test do
-  gem "sqlite3", "~> 1.4" # 開発とテスト用SQLite
+  gem "sqlite3", "~> 2.7" # 開発とテスト用SQLite
   gem "rspec-rails", "~> 6.1.0"
   gem "factory_bot_rails"
   gem "faker"
