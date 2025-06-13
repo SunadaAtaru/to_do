@@ -13,4 +13,4 @@ pin "@popperjs/core/utils/getMainAxisFromPlacement.js", to: "https://ga.jspm.io/
 pin "@popperjs/core/utils/getOppositePlacement.js", to: "https://ga.jspm.io/npm:@popperjs/core@2.11.8/lib/utils/getOppositePlacement.js"
 pin "@popperjs/core/utils/getOppositeVariationPlacement.js", to: "https://ga.jspm.io/npm:@popperjs/core@2.11.8/lib/utils/getOppositeVariationPlacement.js"
 
-pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"
+# pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"
