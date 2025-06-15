@@ -9,6 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
+
           <li class="nav-item">
             <%= link_to "タスク一覧", tasks_path, class: "nav-link" %>
           </li>

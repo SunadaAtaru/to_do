@@ -5,27 +5,34 @@ ja:
     sessions:
       signed_in: "ログインしました。"
       signed_out: "ログアウトしました。"
+      already_signed_out: "すでにログアウト済みです。"
+    registrations:
+      signed_up: "アカウントが作成されました。ログインしました。"
+      signed_up_but_inactive: "アカウントが作成されましたが、まだ有効化されていません。メールを確認してください。"
+      signed_up_but_unconfirmed: "アカウント登録が完了しました。確認用のメールを確認してください。"
+      destroyed: "アカウントを削除しました。"
     passwords:
-      send_instructions: "パスワード再設定の手順を記載したメールを送信しました。"
-      updated: "パスワードを変更しました。"
+      send_instructions: "数分以内にパスワード再設定手順を記載したメールが届きます。"
+      updated: "パスワードが正常に変更されました。ログインしました。"
+      updated_not_active: "パスワードが変更されましたが、アカウントはまだ有効化されていません。"
     failure:
-      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      already_authenticated: "すでにログインしています。"
+      inactive: "アカウントが有効化されていません。"
       invalid: "メールアドレスまたはパスワードが違います。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "あと1回でアカウントがロックされます。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      timeout: "セッションがタイムアウトしました。再度ログインしてください。"
       unauthenticated: "続行するにはログインまたはアカウント登録が必要です。"
+      unconfirmed: "メールアドレスの確認が必要です。"
 
-  errors:
-    messages:
-      not_saved:
-        one: "1 件のエラーが発生したため %{resource} は保存されませんでした。"
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
-      not_found_in_database: "メールアドレスまたはパスワードが違います。"
-      invalid: "メールアドレスまたはパスワードが違います。"
-  
   activerecord:
     models:
       user: "ユーザー"
       task: "タスク"
     attributes:
+      user:
+        email: "メールアドレス"
       task:
         title: "タイトル"
         status: "ステータス"
@@ -44,7 +51,14 @@ ja:
               inclusion: "は一覧にありません"
             user:
               required: "を指定してください"
-      messages:
-        blank: "を入力してください"
-        inclusion: "は一覧にありません"
-        record_invalid: "バリデーションに失敗しました: %{errors}"
+
+  errors:
+    messages:
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      blank: "を入力してください"
+      inclusion: "は一覧にありません"
+      record_invalid: "バリデーションに失敗しました: %{errors}"
+      not_saved:
+        one: "1 件のエラーが発生したため %{resource} は保存されませんでした。"
+        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
