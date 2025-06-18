@@ -80,4 +80,9 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
   config.assets.compile = true
 
+  # digest付きのファイル名を使わず、キャッシュを防止
+  config.assets.digest = false
+
+  # アセットはファイルごとに読み込んでデバッグしやすく
+  config.assets.debug = true
 end

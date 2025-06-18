@@ -36,8 +36,8 @@
           <div class="d-flex justify-content-between align-items-center mt-2">
             <span class="badge <%= task.status == '完了' ? 'bg-success' : 'bg-warning' %>"><%= task.status %></span>
             <div>
-              <%= link_to "編集", edit_task_path(task), class: "btn btn-sm btn-outline-secondary" %>
-              <%= link_to "削除", task_path(task), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-outline-danger" %>
+              <%= link_to "編集", edit_task_path(task), class: "btn btn-sm btn-secondary" %>
+              <%= link_to "削除", task_path(task), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-danger" %>
             </div>
           </div>
         </div>

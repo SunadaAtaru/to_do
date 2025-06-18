@@ -62,3 +62,8 @@ ja:
       not_saved:
         one: "1 件のエラーが発生したため %{resource} は保存されませんでした。"
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+    template:  # ← ここから追記
+      header:
+        one: "%{count} 件のエラーがあります"
+        other: "%{count} 件のエラーがあります"
+      body: "次の項目を確認してください："

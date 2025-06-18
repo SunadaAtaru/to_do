@@ -6,4 +6,5 @@ import "bootstrap"
 // import Rails from "@rails/ujs"
 // Rails.start()
 import "./custom/guide"
+import "./custom/step_form"
 

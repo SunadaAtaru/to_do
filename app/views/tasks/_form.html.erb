@@ -1,7 +1,9 @@
 <%= form_with(model: task, local: true) do |form| %>
   <% if task.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h4>
+       <h4><%= t('errors.template.header', count: task.errors.count) %></h4>
+       <p><%= t('errors.template.body') %></p>
+
       <ul>
         <% task.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -31,7 +33,7 @@
   </div>
 
   <div class="d-flex justify-content-between mt-4">
-    <%= link_to "戻る", tasks_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "戻る", tasks_path, class: "btn btn-secondary" %>
     <%= form.submit "保存", class: "btn btn-primary" %>
   </div>
 <% end %>
