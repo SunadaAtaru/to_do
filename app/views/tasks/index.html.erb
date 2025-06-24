@@ -24,7 +24,7 @@
               
               <!-- タスクタイトル（完了の場合は取り消し線） -->
               <h5 class="mb-0 <%= task.status == '完了' ? 'text-decoration-line-through text-muted' : '' %>">
-                <%= link_to task.title, task_path(task), class: "#{task.status == '完了' ? 'text-muted' : ''}" %>
+                <h5 class="mb-0 <%= task.status == '完了' ? 'text-muted' : '' %>">
               </h5>
             </div>
             
