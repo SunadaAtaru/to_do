@@ -10,11 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show ]
   # resources :users, only: [:show], constraints: { id: /\d+/ }
-  resources :tasks do
-    member do
-      patch :toggle_status
-    end
-  end
+  resources :tasks 
   # 以下は既存のルート - 残しておくことをお勧めします
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

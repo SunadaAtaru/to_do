@@ -29,7 +29,7 @@
           </div>
           <div class="d-flex gap-2">
             <%= link_to "編集", edit_task_path(@task), class: "btn btn-primary" %>
-            <%= button_to "削除", task_path(@task), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+            <%= button_to "削除", task_path(@task), method: :delete, data: { turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
           </div>
         </div>
       </div>
