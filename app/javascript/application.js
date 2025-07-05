@@ -4,9 +4,8 @@
 
 import "@hotwired/turbo-rails"
 import "@hotwired/stimulus"
-// import "@hotwired/stimulus-loading"  // ← stimulus-loadingもimportが必要
 import "bootstrap"
-import "./custom/guide"
-import "./custom/step_form"
-
+import "custom/guide"
+import "custom/step_form"
+import "custom/modal_delete_confirm"
 
