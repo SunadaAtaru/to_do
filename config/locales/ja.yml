@@ -1,4 +1,10 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+      long: "%Y年%m月%d日 %H時%M分"
+  
   hello: "こんにちは"
 
   devise:
@@ -11,6 +17,7 @@ ja:
       signed_up_but_inactive: "アカウントが作成されましたが、まだ有効化されていません。メールを確認してください。"
       signed_up_but_unconfirmed: "アカウント登録が完了しました。確認用のメールを確認してください。"
       destroyed: "アカウントを削除しました。"
+      current_password: '現在のパスワードを入力してください'
     passwords:
       send_instructions: "数分以内にパスワード再設定手順を記載したメールが届きます。"
       updated: "パスワードが正常に変更されました。ログインしました。"
@@ -32,6 +39,7 @@ ja:
       task: "タスク"
     attributes:
       user:
+        current_password: "現在のパスワード"
         email: "メールアドレス"
       task:
         title: "タイトル"
@@ -54,6 +62,7 @@ ja:
 
   errors:
     messages:
+      current_password: "を入力してください"
       not_found_in_database: "メールアドレスまたはパスワードが違います。"
       invalid: "メールアドレスまたはパスワードが違います。"
       blank: "を入力してください"

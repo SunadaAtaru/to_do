@@ -30,7 +30,8 @@
         <div class="d-flex gap-2">
           <%= link_to "編集", edit_task_path(@task), class: "btn btn-outline-primary shadow-sm" %>
           
-          <%= button_to "削除", task_path(@task), method: :delete, class: "btn btn-outline-danger shadow-sm delete-btn" %>
+          <%= button_to "削除", task_path(@task), method: :delete, class: "btn btn-outline-danger shadow-sm delete-btn", form: { data: { turbo: false } } %>
+
         </div>
       </div>
     </div>

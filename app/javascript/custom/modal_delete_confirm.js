@@ -1,3 +1,6 @@
+import * as bootstrap from "bootstrap";
+
+
 console.log('ファイル先頭テスト：modal_delete_confirm.js読み込み成功？');
 
 

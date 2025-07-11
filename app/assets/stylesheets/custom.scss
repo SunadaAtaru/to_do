@@ -1,55 +1,94 @@
-
+/* === ナビゲーションバー（白基調 + 青文字） === */
 .navbar.navbar-expand-lg {
+  // background-color: #e83e8c; /* ピンク */
+  background-color: #FF00FF; /* 明るいピンク */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
-    // 
-    background-color:#007bff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-  }
-  
-  .nav-link {
-    font-weight: 500;
-  }
-  
-  .dropdown-menu {
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-  
-  .dropdown-item:active {
-    background-color: #007bff;
-  }
+.navbar-brand {
+  font-weight: bold;
+  color:  #ffffff;
+}
 
-  .guide-tooltip {
-  background: #f0f9ff;
-  border-left: 5px solid #0d6efd;
-  border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 1rem;
+.navbar-brand:hover {
+  color:  #ffffff;
+}
+
+.nav-link {
+  font-weight: 500;
+  color:  #ffffff;
+}
+
+.nav-link:hover {
+  color:  #ffffff;
+}
+
+/* === ドロップダウンメニュー === */
+.dropdown-menu {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-item:active {
+  background-color: #e7f1ff;
+}
+
+/* === ガイドツールチップ（白基調） === */
+.guide-tooltip {
+  background: #fff;
+  
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #212529;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 320px;
-  z-index: 9999;
+  z-index: 1050;
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.guide-tooltip .guide-close {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.guide-tooltip .guide-close:hover {
+  color: #000;
 }
 
 
+/* === ボタン（白基調に合う明るめ） === */
 body .btn,
 body .btn.btn-primary,
 body .btn.btn-success,
 body .btn.btn-secondary,
 body .btn.btn-danger {
   border-radius: 8px;
-  font-weight: normal;
+  font-weight: 500;
   padding: 10px 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
   border: none;
 }
 
+/* === フェードインアニメーション（軽やかに） === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
