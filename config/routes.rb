@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # ルートパスを設定
   root "home#index"
 
-  resources :users, only: [ :show ]
-  # resources :users, only: [:show], constraints: { id: /\d+/ }
-  resources :tasks 
+  resources :users do
+    resources :tasks
+  end
   # 以下は既存のルート - 残しておくことをお勧めします
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

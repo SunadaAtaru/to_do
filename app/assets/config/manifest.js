@@ -10,3 +10,4 @@
 //= link custom/guide.js
 //= link custom/step_form.js
 //= link custom/modal_delete_confirm.js
+ //= link custom/flash.js

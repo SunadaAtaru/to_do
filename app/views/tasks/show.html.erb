@@ -26,11 +26,11 @@
 
     <div class="card-footer bg-white">
       <div class="d-flex justify-content-between align-items-center">
-        <%= link_to "戻る", tasks_path, class: "btn btn-secondary shadow-sm" %>
+        <%= link_to "戻る", user_tasks_path, class: "btn btn-secondary shadow-sm" %>
         <div class="d-flex gap-2">
-          <%= link_to "編集", edit_task_path(@task), class: "btn btn-outline-primary shadow-sm" %>
+          <%= link_to "編集", edit_user_task_path(@task), class: "btn btn-outline-primary shadow-sm" %>
           
-          <%= button_to "削除", task_path(@task), method: :delete, class: "btn btn-outline-danger shadow-sm delete-btn", form: { data: { turbo: false } } %>
+          <%= button_to "削除", user_task_path(@task), method: :delete, class: "btn btn-outline-danger shadow-sm delete-btn", form: { data: { turbo: false } } %>
 
         </div>
       </div>

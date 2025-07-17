@@ -49,7 +49,7 @@ RSpec.describe "基本機能テスト", type: :system do
 
     it "タスク一覧が表示される" do
       # タスク一覧ページに明示的にアクセス
-      visit tasks_path
+      visit user_tasks_path
 
       # タスクが表示されているか確認
       expect(page).to have_content "テストタスク"

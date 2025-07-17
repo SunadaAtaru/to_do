@@ -4,7 +4,7 @@
 
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="fw-bold text-primary">タスク一覧</h1>
-        <%= link_to "新規タスク作成", new_task_path, class: "btn btn-outline-success shadow-sm" %>
+        <%= link_to "新規タスク作成", new_user_task_path, class: "btn btn-outline-success shadow-sm" %>
 
       </div>
 
@@ -21,7 +21,8 @@
                   <% end %>
 
                   <h5 class="mb-0 <%= task.status == '完了' ? 'text-muted' : '' %>">
-                    <%= link_to task.title, task_path(task), class: "text-decoration-none" %>
+                    <%= link_to task.title, user_task_path(current_user, task), class: "text-decoration-none" %>
+
                   </h5>
                 </div>
 
@@ -40,8 +41,9 @@
                 </span>
 
                 <div>
-                  <%= link_to "編集", edit_task_path(task), class: "btn btn-outline-primary btn-sm me-2" %>
-                  <%= link_to "詳細", task_path(task), class: "btn btn-outline-secondary btn-sm" %>
+                  <%= link_to "編集", edit_user_task_path(current_user, task), class: "btn btn-outline-primary btn-sm me-2" %>
+                  <%= link_to "詳細", user_task_path(current_user, task), class: "btn btn-outline-secondary btn-sm" %>
+
                 </div>
               </div>
             </div>

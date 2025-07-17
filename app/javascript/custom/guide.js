@@ -4,10 +4,12 @@ document.addEventListener("turbo:load", () => {
 
   if (!tooltip || !closeBtn) return;
 
-  // ページがロードされたら毎回表示
+  // 初期状態: d-none を外して show を付ける
   tooltip.classList.remove("d-none");
+  tooltip.classList.add("show");
 
   closeBtn.addEventListener("click", () => {
+    tooltip.classList.remove("show");
     tooltip.classList.add("d-none");
   });
 });

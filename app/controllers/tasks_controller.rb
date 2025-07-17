@@ -13,15 +13,17 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    @user = current_user
     @task = current_user.tasks.build
   end
 
   # POST /tasks
   def create
+    @user = current_user
     @task = current_user.tasks.build(task_params)
 
     if @task.save
-      redirect_to tasks_path, notice: "タスクが正常に作成されました"
+      redirect_to user_tasks_path, notice: "タスクが正常に作成されました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +36,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/:id
   def update
     if @task.update(task_params)
-      redirect_to tasks_path, notice: "タスクが正常に更新されました"
+      redirect_to user_tasks_path, notice: "タスクが正常に更新されました"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -61,6 +63,7 @@ class TasksController < ApplicationController
 
   # タスクの取得と認可
   def set_task
+    @user = current_user
     @task = current_user.tasks.find_by(id: params[:id])
 
     unless @task

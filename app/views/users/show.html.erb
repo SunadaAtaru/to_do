@@ -31,12 +31,12 @@
           <% end %>
         </ul>
         <div class="text-center text-md-start">
-          <%= link_to 'タスク一覧を見る', tasks_path, class: "btn btn-outline-primary mt-2 shadow-sm" %>
+          <%= link_to 'タスク一覧を見る', user_tasks_path, class: "btn btn-outline-primary mt-2 shadow-sm" %>
         </div>
       <% else %>
         <p class="text-muted mt-2 text-center">まだタスクは登録されていません。</p>
         <div class="text-center">
-          <%= link_to '新しいタスクを作成する', new_task_path, class: "btn btn-outline-primary mt-2 shadow-sm" %>
+          <%= link_to 'を作成する', new_task_path, class: "btn btn-outline-primary mt-2 shadow-sm" %>
         </div>
       <% end %>
     </div>
