@@ -41,6 +41,9 @@ ja:
       user:
         current_password: "現在のパスワード"
         email: "メールアドレス"
+        username: "ユーザー名"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
       task:
         title: "タイトル"
         status: "ステータス"

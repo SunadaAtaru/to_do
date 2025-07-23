@@ -38,8 +38,7 @@ RSpec.describe "基本機能テスト", type: :system do
     # 各テストの前にログイン処理を行う
     before do
       # 明示的にログイン
-      visit new_user_session_path
-      fill_in "user_email", with: user.email
+      visit new_user_session      fill_in "user_email", with: user.email
       fill_in "user_password", with: "password"
       click_button "ログイン"
 
